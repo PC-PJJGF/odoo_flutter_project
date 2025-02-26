@@ -63,8 +63,6 @@ flutter run
 ## 📚 Documentación de Desarrollo
 Para más detalles sobre la API de Odoo y su integración con Flutter, consulta la documentación oficial de Odoo: [Odoo API Docs](https://www.odoo.com/documentation).
 
-Si el proyecto cuenta con documentación interna, agrégala en una **wiki** o en un archivo `docs/README.md`.
-
 ## 🖥️ Guía de Contribución
 Si deseas contribuir al proyecto, por favor revisa las [Normas de Contribución](CONTRIBUTING.md).
 
