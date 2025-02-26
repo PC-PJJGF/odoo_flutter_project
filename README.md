@@ -70,9 +70,10 @@ Si deseas contribuir al proyecto, por favor revisa las [Normas de Contribución]
 
 ## 👥 Contribuidores
 
-| Contribuidor | Commits | Language | Followers |
-|--------------|---------|--------|-----------|
-|![carlos75357](https://github.com/carlos75357.png?size=40) [carlos75357](https://github.com/carlos75357) | ![commits](https://img.shields.io/github/commit-activity/t/PC-PJJGF/odoo_flutter_project?branch=develop) | ![language](https://img.shields.io/github/languages/top/PC-PJJGF/odoo_flutter_project) | ![followers](https://img.shields.io/github/followers/carlos75357?label=followers) |
+| Contribuidor | Commits | Language | Followers | Contribuciones |
+|--------------|---------|--------|-----------|---------------|
+|![carlos75357](https://github.com/carlos75357.png?size=40) [carlos75357](https://github.com/carlos75357) | ![commits](https://img.shields.io/github/commit-activity/t/PC-PJJGF/odoo_flutter_project?branch=develop) | ![language](https://img.shields.io/github/languages/top/PC-PJJGF/odoo_flutter_project) | ![followers](https://img.shields.io/github/followers/carlos75357?label=followers) | ![Contribuyentes](https://img.shields.io/github/contributors/PC-PJJGF/odoo_flutter_project)
+
 
 ## 🧪 Testing
 Para ejecutar los tests del proyecto:
@@ -87,6 +88,13 @@ flutter test
 
 ## 📝 Changelog
 Para ver los cambios recientes, consulta el [CHANGELOG.md](CHANGELOG.md).
+
+## 🎥 Demo en Video
+
+[![Odoo Flutter Project - Demo](https://img.youtube.com/vi/ajCT4fY7jbM/0.jpg)](https://www.youtube.com/watch?v=ajCT4fY7jbM)
+
+Haz clic en la imagen para ver el video en YouTube.
+
 
 ## 💬 Soporte
 Si encuentras algún problema o tienes alguna pregunta, por favor abre un [issue](https://github.com/tu-usuario/odoo-flutter-project/issues) en GitHub.
