@@ -1,294 +1,98 @@
-# Proyecto Práctico de Flutter con Odoo
+# 📱 Odoo Flutter Project
 
-## Objetivo
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Flutter Version](https://img.shields.io/badge/Flutter-3.13.0-blue.svg)](https://flutter.dev)
 
-El objetivo de este proyecto es desarrollar una aplicación móvil en Flutter que se conecte a un servidor de Odoo para
-realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre registros del modelo "crm.lead". La aplicación
-permitirá autenticar usuarios, listar los leads disponibles, crear nuevos leads, ver detalles de un lead específico,
-editarlo y eliminar leads existentes.
+![Vista previa de la aplicación](ruta/a/imagen.png) <!-- Cambiar por una imagen real de la app -->
 
-## Instalación del Entorno
+## 📖 Descripción
 
-Para comenzar, asegúrate de tener instalado Flutter en tu sistema operativo Linux. Aquí tienes un ejemplo de cómo
-hacerlo:
+Este proyecto es una aplicación móvil desarrollada en **Flutter** que se conecta a un servidor **Odoo** para gestionar datos relacionados con el modelo `crm.lead`. La app permite a los usuarios autenticarse, visualizar una lista de clientes potenciales (leads), crear nuevos registros, editar información y eliminarlos según sea necesario.
 
-https://docs.flutter.dev/get-started/install/linux
+El propósito de este proyecto es facilitar la gestión comercial en Odoo mediante una interfaz amigable y optimizada para dispositivos móviles.
 
-Es conveniente realizar el siguiente codelab para familiarizarse con el entorno de desarrollo de Flutter:
+## 📌 Tabla de Contenidos
+- [🚀 Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [🛠 Puesta en Marcha](#-puesta-en-marcha)
+- [🌍 Entornos](#-entornos)
+- [📚 Documentación](#-documentación)
+- [🖥️ Contribución](#️-contribución)
+- [👥 Contribuidores](#-contribuidores)
+- [🧪 Testing](#-testing)
+- [🗺️ Roadmap](#️-roadmap)
+- [📝 Changelog](#-changelog)
+- [💬 Soporte](#-soporte)
+- [💡 Inspiración](#-inspiración)
+- [📜 Licencia](#-licencia)
 
-https://codelabs.developers.google.com/codelabs/flutter-codelab-first?hl=es-419#0
+## 🚀 Tecnologías Utilizadas
 
-Utilizaremos el IDE de desarrollo IntelliJ IDEA (En su versión Community Edition)
+- **Flutter**: Framework para el desarrollo de aplicaciones móviles.  
+- **Dart**: Lenguaje de programación utilizado en Flutter.  
+- **Odoo**: Plataforma ERP con API para la gestión de datos.  
+- **IntelliJ IDEA**: IDE recomendado para el desarrollo en Flutter.  
 
-https://www.jetbrains.com/es-es/idea/download/?section=linux
+---
 
-## Arquitectura de la Aplicación
+## 🛠 Puesta en Marcha
 
-Utilizaremos el patrón Clean Architecture para estructurar nuestra aplicación. Esto implica separarla en capas bien
-definidas: Data, Domain y UI.
+### 📌 Requisitos Previos
+1. Tener instalado **Flutter** ([Guía de instalación](https://docs.flutter.dev/get-started/install)).  
+2. Tener acceso a un servidor **Odoo** con los módulos necesarios activados.  
+3. Configurar las credenciales en `lib/config.dart`.  
 
-1-Capa de Datos (data): Esta capa manejará la comunicación con el servidor de Odoo a través de peticiones HTTP. Se
-utilizará el cliente HTTP de Dart para realizar las operaciones CRUD sobre los registros del modelo "crm.lead". Además,
-se establecerá un repositorio para abstraer la lógica de acceso a los datos.
+### 🔧 Instalación y Ejecución
+```bash
+# Clonar el repositorio
+git clone https://github.com/PC-PJJGF/odoo_flutter_project.git
+cd odoo-flutter-project
 
-https://pub.dev/packages/http
+# Instalar dependencias
+flutter pub get
 
-2-Capa de Dominio (domain): Aquí se definirán los modelos de datos que representan los objetos de negocio de la
-aplicación, como el modelo Lead para representar un lead en Odoo.
+# Ejecutar la app en un emulador o dispositivo
+flutter run
+```
 
-3-Capa de Interfaz de Usuario (ui): La interfaz de usuario estará organizada en características (features), donde cada
-característica representará una pantalla o funcionalidad de la aplicación. Se utilizará el patrón de diseño flutter_bloc
-para manejar el estado de la aplicación de forma eficiente y reactiva.
+## 🌍 Entornos
+| Entorno | URL |
+|---------|-----|
+| Producción | https://odoo.tuempresa.com |
+| Desarrollo | http://localhost:8069 |
 
-https://pub.dev/packages/flutter_bloc
+## 📚 Documentación de Desarrollo
+Para más detalles sobre la API de Odoo y su integración con Flutter, consulta la documentación oficial de Odoo: [Odoo API Docs](https://www.odoo.com/documentation).
 
-https://medium.com/@kadriyemacit/login-screen-with-bloc-pattern-9b667a1cbcad
+Si el proyecto cuenta con documentación interna, agrégala en una **wiki** o en un archivo `docs/README.md`.
 
-Ejemplo de la estructura en una app de Aures:
+## 🖥️ Guía de Contribución
+Si deseas contribuir al proyecto, por favor revisa las [Normas de Contribución](CONTRIBUTING.md).
 
-<img width="402" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/e5d22705-b15e-42b0-8f5c-a4b1e5193114">
+## 👥 Contribuidores
 
+| Contribuidor | Commits | Language | Followers |
+|--------------|---------|--------|-----------|
+|![carlos75357](https://github.com/carlos75357.png?size=40) [carlos75357](https://github.com/carlos75357) | ![commits](https://img.shields.io/github/commit-activity/t/PC-PJJGF/odoo_flutter_project?branch=develop) | ![language](https://img.shields.io/github/languages/top/PC-PJJGF/odoo_flutter_project) | ![followers](https://img.shields.io/github/followers/carlos75357?label=followers) |
 
-## flutter_bloc
+## 🧪 Testing
+Para ejecutar los tests del proyecto:
+```bash
+flutter test
+```
 
-Gestión de Estado con flutter_bloc:
+## 🗺️ Roadmap
+- [ ] Implementar autenticación OAuth
+- [ ] Añadir soporte para notificaciones push
+- [ ] Mejorar la interfaz de usuario
 
-flutter_bloc es una biblioteca que facilita la implementación del patrón de gestión de estado BLoC (Business Logic
-Component) en Flutter. Este patrón separa la lógica de presentación (UI) de la lógica de negocio y del estado de la
-aplicación. Aquí hay una descripción de los elementos principales del patrón BLoC:
+## 📝 Changelog
+Para ver los cambios recientes, consulta el [CHANGELOG.md](CHANGELOG.md).
 
-1-Interfaz de Usuario (UI):
-En la interfaz de usuario, se presenta al usuario una pantalla de inicio de sesión donde puede ingresar su nombre de
-usuario y contraseña. Además, puede haber botones para enviar los datos de inicio de sesión y para navegar a la pantalla
-de registro si es necesario.
+## 💬 Soporte
+Si encuentras algún problema o tienes alguna pregunta, por favor abre un [issue](https://github.com/tu-usuario/odoo-flutter-project/issues) en GitHub.
 
-2-BLoC (Business Logic Component):
-El BLoC encargado del inicio de sesión es responsable de manejar la lógica relacionada con la autenticación del usuario.
-Cuando el usuario envía sus credenciales de inicio de sesión desde la interfaz de usuario, el BLoC recibe estos eventos
-y realiza las operaciones necesarias, como comunicarse con el servidor de autenticación y verificar las credenciales del
-usuario.
+## 💡 Inspiración
+Este proyecto fue desarrollado para facilitar la integración de Flutter con Odoo y permitir la gestión eficiente de clientes potenciales.
 
-3-Estados:
-Durante el proceso de inicio de sesión, la aplicación puede pasar por varios estados diferentes. Por ejemplo, puede
-haber un estado de "Cargando" mientras se procesa la solicitud de inicio de sesión, un estado de "Éxito" si las
-credenciales son válidas y el usuario se autentica correctamente, o un estado de "Error" si se produce algún problema
-durante el proceso de inicio de sesión, como credenciales incorrectas o problemas de conexión con el servidor.
-
-4-Eventos:
-Los eventos representan las acciones que el usuario realiza en la interfaz de usuario que desencadenan cambios en el
-estado del BLoC. Por ejemplo, un evento de "Inicio de Sesión" se desencadena cuando el usuario presiona el botón de
-inicio de sesión después de ingresar sus credenciales.
-
-## API de Odoo
-
-https://www.odoo.com/documentation/15.0/es/developer/howtos/web_services.html#json-rpc-library
-
-Se utilizará la API JSON-RPC proporcionada por Odoo para interactuar con el servidor. Los principales métodos que se
-emplearán son:
-
--authenticate: Autentica al usuario en Odoo y devuelve un token de sesión.
--search_read: Realiza una búsqueda de registros según un dominio y devuelve los registros encontrados.
--read: Lee los valores de un registro específico.
--unlink: Elimina un registro específico.
--write: Actualiza los valores de un registro específico.
-
-Ejemplo de petición a Odoo en flutter (Concretamente el método de autenticación):
-
-![image](https://github.com/aurestic/flutter_crm_prove/assets/32957956/52d26aeb-fab4-43b8-923e-970f88f76d24)
-
-
-## Implementación de Funcionalidades
-
--Autenticación:
-La aplicación permitirá al usuario iniciar sesión en el servidor de Odoo utilizando su nombre de usuario
-y contraseña.
-
-<img width="1509" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/a37291c0-2fc5-4bf5-90c9-9f529a7a4f0e">
-
--Listado de Leads:
-Al hacer login se redirigirá a una pantalla que mostrará una lista de todos los leads disponibles en el servidor.
-
-<img width="784" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/7dd83d57-f96b-4e0a-8c33-1c0cedecb63f">
-
--Creación de Leads:
-Los usuarios podrán crear nuevos leads proporcionando los detalles necesarios, a través de un fab en la parte inferior derecha del listado anterior.
-
-<img width="849" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/eca02d43-ac28-4517-81da-c7df12e0755e">
-
--Detalle de Lead: 
-Al seleccionar un lead de la lista, se mostrarán sus detalles, como nombre de la oportunidad, correo
-electrónico, ingreso esperado, prioridad, etc. A su vez, dentro del modo detalle, en el la AppBar, habrá un botón de
-editar, que habilitará los campos de edición y podrá realizar cambios para posteriormente almacenarlos en el backend, a
-través de un botón de guardado también alojado en la AppBar.
-
-<img width="1509" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/8030f13d-9e1f-4fe3-a5e1-643f2378fdcb">
-
--Eliminación de Leads: 
-Los usuarios podrán eliminar leads existentes desde la AppBar de la pantalla del detalle.
-
-<img width="1509" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/1af208bf-e54f-4a4d-93ea-87621e2fe586">
-
-*Puedes apoyarte en el inspector de elementos del navegador, ya que te indicará en todo momento que petición se está haciendo, para así replicarla en tu código Flutter.
-
-![image](https://github.com/aurestic/flutter_crm_prove/assets/32957956/0b02f367-7438-4959-b5cd-7af4e626e62f)
-
-
-
-## Diseño
-
-Puedes basarte en este ejemplo, o crear el tuyo propio:
-
-<img width="366" alt="login" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/ee821f17-f9a6-43b8-aad5-f5effa141da8">
-
-<img width="366" alt="lista_oportunidades" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/9b02ef77-345e-41f9-ad1d-7bb4980dfe0c">
-
-<img width="366" alt="crear_oportunidad" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/6e17ed85-61cd-4263-890d-d111f128b97c">
-
-
-## Datos de acceso
-
----------------------------------------
-
-URL: https://demos15.aurestic.com
-
-DB: demos_demos15
-
-USERNAME: admin
-
-PASSWORD: admin
-
----------------------------------------
-
--Url para listar los leads:
-
-https://demos15.aurestic.com/web?debug=1#cids=1&menu_id=381&action=558&model=crm.lead&view_type=kanban
-
--Modelo del lead (crm.lead):
-
-https://demos15.aurestic.com/web?debug=1#id=804&cids=1&menu_id=4&action=18&model=ir.model&view_type=form
-
-
-## Firebase
-
-Añadir firebase al proyecto.
-
--https://firebase.google.com/docs/flutter/setup?hl=es&platform=android
-
--https://pub.dev/packages/firebase_core
-
-
-
-Leer las preferencias al iniciar la aplicación del Firebase Remote Config, para establecer el límite de leads que se leeran en la app, si puede crear/eliminar leads.
-
-
--https://console.firebase.google.com/project/flutter-crm-prove/config/env/firebase
-
--https://pub.dev/packages/firebase_remote_config
-
-<img width="1509" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/eb82dc8b-da98-400e-b586-2ce598bf3d86">
-
-
-
-Implementar el Crashlytics de Firebase en la aplicación, forzando un error y que se refleje el panel.
-
-
--https://console.firebase.google.com/project/flutter-crm-prove/crashlytics
-
--https://pub.dev/packages/firebase_crashlytics
-
-<img width="1509" alt="image" src="https://github.com/aurestic/flutter_crm_prove/assets/32957956/ac7b64d4-019d-4af3-adcc-ac70643afdb7">
-
-
-
-## Modo oscuro
-
--Implementar mediante una preferencía switch, el modo claro/oscuro, en tiempo de ejecución. (Libre diseño)
-
-
-## Flutter Lints
-
--Implementar la librería flutter_lints y que en la inspección del código fuente no aparezca ningún warning o error.
-
-https://pub.dev/packages/flutter_lints
-
-
-![image](https://github.com/aurestic/flutter_crm_prove/assets/32957956/ad0b9c6f-06db-4eec-9ae7-444ea0c39691)
-
-
-
-## Flujo de trabajo
-
-El flujo de trabajo con pull requests es una práctica común en el desarrollo colaborativo de software que permite una
-revisión y colaboración efectiva entre los miembros del equipo. Aquí te explico cómo podríamos organizar el trabajo
-utilizando pull requests:
-
--División en Subtareas:
-Dividiremos el proyecto en subtareas más pequeñas y manejables. Por ejemplo, podríamos dividir las funcionalidades
-solicitadas (autenticación, listado de leads, creación de leads, etc.) en subtareas individuales.
-
--Asignación de Tareas:
-Asignaremos cada subtarea a un miembro del equipo. Cada miembro será responsable de completar su tarea asignada de
-manera independiente.
-
--Creación de Branches:
-Para cada subtarea, el desarrollador creará una nueva rama (branch) en el repositorio de Git. Esta rama estará basada en
-la rama principal (por ejemplo, main o master).
-
--Desarrollo y Commit:
-El desarrollador trabajará en su rama localmente, implementando la funcionalidad requerida. A medida que avance,
-realizará commits frecuentes con mensajes descriptivos que expliquen los cambios realizados.
-
--Pull Request:
-Una vez que la funcionalidad esté completa y probada localmente, el desarrollador abrirá una pull request desde su rama
-hacia la rama principal del repositorio. En la pull request, proporcionará una descripción detallada de los cambios
-realizados y de la funcionalidad implementada.
-
--Revisión y Comentarios:
-Los demás miembros del equipo revisarán la pull request, analizando el código y proporcionando comentarios y sugerencias
-para mejorarlo si es necesario. Se puede discutir y debatir sobre los cambios propuestos en la sección de comentarios de
-la pull request.
-
--Iteración y Mejora:
-El desarrollador realizará cambios adicionales según los comentarios recibidos. Este proceso de revisión y iteración
-continuará hasta que la pull request sea aprobada por todos los revisores.
-
--Merge:
-Una vez que la pull request haya sido aprobada y todos los problemas hayan sido resueltos, se procederá a fusionar (
-merge) los cambios en la rama principal del repositorio.
-
-## Buenas Prácticas en Flutter
-
--Codificación en Inglés:
-Es una buena práctica escribir el código y los comentarios en inglés para mantener la consistencia y facilitar la
-colaboración con desarrolladores de todo el mundo.
-
--Convención de Nombres:
-Sigue las convenciones de nombres de Dart y Flutter para variables, funciones, clases, etc. Utiliza nombres descriptivos
-y significativos para mejorar la legibilidad del código.
-
--Organización del Código:
-Estructura tu código de manera lógica y coherente. Utiliza carpetas y archivos para organizar los diferentes componentes
-de tu aplicación, como modelos, vistas, controladores, etc.
-
--Documentación:
-Documenta tu código utilizando comentarios claros y concisos para explicar la funcionalidad y el propósito de cada
-componente. Esto facilita la comprensión del código para otros desarrolladores y para ti mismo en el futuro.
-
--Pruebas Unitarias y de Integración:
-Implementa pruebas unitarias y de integración para verificar el correcto funcionamiento de tu código. Las pruebas
-automatizadas son fundamentales para garantizar la calidad y estabilidad de tu aplicación.
-
-https://docs.flutter.dev/cookbook/testing/unit/introduction
-
--Versionado y Control de Versiones:
-Utiliza un sistema de control de versiones como Git para administrar el código fuente de tu proyecto. Realiza commits
-frecuentes y descriptivos para mantener un historial claro de los cambios realizados.
-
--Seguridad:
-Ten en cuenta las consideraciones de seguridad al manejar datos sensibles, como contraseñas de usuario. Utiliza técnicas
-de cifrado y almacenamiento seguro para proteger la información del usuario.
-
-https://pub.dev/packages/flutter_secure_storage
-
-
-
+## 📜 Licencia
+Este proyecto se distribuye bajo los términos de la Licencia MIT. Para más información, revisa el archivo [LICENSE](LICENSE).
